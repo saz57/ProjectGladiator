@@ -27,7 +27,7 @@ public class BackToIdle : StateMachineBehaviour
 		/*if (OnMoveEnter != null) {
 			OnMoveEnter ();
 		}*/
-		animator.SendMessage ("SetCanMove", true);
+		animator.SendMessage ("InIdle", true);
 
 	}
 
@@ -36,7 +36,7 @@ public class BackToIdle : StateMachineBehaviour
 		/*if (OnMoveExit != null) {
 			OnMoveExit ();
 		}*/
-		animator.SendMessage ("SetCanMove", false);
+		animator.SendMessage ("InIdle", false);
 	}
 }
 

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof (CharacterController))]
-public class MyMove : MonoBehaviour {
+
+public class Move : MonoBehaviour {
 	
 	public float speed = 10.0f;
 	public float jumpSpeed = 8.0f;
@@ -35,9 +36,9 @@ public class MyMove : MonoBehaviour {
 	}*/
 	#endregion
 
-	public void SetCanMove(bool canMove) // ОБРАБОТЧИК НОМЕР РАЗ
+	public void InIdle(bool _inIdle)
 	{
-		canMove = canMove;
+		canMove = _inIdle;
 		if (!canMove) {
 			moveDirection = Vector3.zero;
 		}
@@ -60,8 +61,6 @@ public class MyMove : MonoBehaviour {
 			}*/
 			}
 		}
-		if (!canMove) {
-	}
 			// Apply gravity
 			moveDirection.y -= gravity * Time.deltaTime;
 		

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TestMecanim : MonoBehaviour {
 
+	[SerializeField]
+	private BlockCollision blockCollision;
 //	public myMove controller;
 	private Animator anim;
 	// Use this for initialization
@@ -46,7 +48,7 @@ public class TestMecanim : MonoBehaviour {
 			anim.SetBool ("JumpAttack", true);
 		}
 
-		if (Input.GetKeyDown (KeyCode.Z)) {
+		/*if (Input.GetKeyDown (KeyCode.Z)) {
 			anim.SetBool ("GetDamage", true);
 			anim.SetInteger ("DamageType", 1);
 		}
@@ -59,14 +61,20 @@ public class TestMecanim : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.C)) {
 			anim.SetBool ("GetDamage", true);
 			anim.SetInteger ("DamageType", 3);
-		}
+		}*/
 
 		if (Input.GetButtonDown ("Block")) {
+			blockCollision.EnableCollision ();
 			anim.SetBool ("Block", true);
 		}
 
 		if (Input.GetButtonUp ("Block")) {
 			anim.SetBool ("Block", false);
 		}
+	}
+
+	public void InIdle()
+	{
+		blockCollision.DisableCollision ();
 	}
 }
